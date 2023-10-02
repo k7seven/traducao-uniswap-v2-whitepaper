@@ -50,7 +50,7 @@ Uma proliferação de pares entre ERC20 arbitrários poderia tornar um tanto qua
 
 O preço marginal oferecido pela Uniswap (sem incluir taxas) no tempo t pode ser computado ao dividir as reservas do ativo a pelas reservas do ativo b.
 
-(ADICIONAR IMAGEM 1)
+![image1](https://github.com/k7seven/traducao-uniswap-v2-whitepaper/assets/132465200/568f5f09-6501-4ec0-ae20-e5053bc90ef9)
 
 Como os arbitradores vão fazer trade na Uniswap se esse preço estiver incorreto (por um montante suficiente que valha a pena, contando as taxas), o preço oferecido pela Uniswap tende a acompanhar o preço relativo de mercado dos ativos, conforme demonstrado por Angeris e outros. Isso significa que pode ser utilizado como um oráculo de preço aproximado.
 
@@ -60,11 +60,11 @@ Uniswap v2 melhora essa funcionalidade do oráculo ao medir e gravar o preço an
 
 Especificamente, a Uniswap v2 acumula o preço, ao manter o acompanhamento da soma cumulativa dos preços no começo de cada bloco em que alguém interage com o contrato. Cada preço é ponderado pela quantidade de tempo que passou desde o último bloco em que foi atualizado, de acordo com o timestamp do bloco. Isso significa que o valor acumulado de cada tempo (depois de ser atualizado) deverá ser a soma do preço spot em cada segundo no histórico do contrato.
 
-(ADICIONAR IMAGEM 2)
+![image2](https://github.com/k7seven/traducao-uniswap-v2-whitepaper/assets/132465200/e8d0c1ca-208c-4627-8769-b2d8d08a484a)
 
 Para estimar o preço médio ponderado no tempo do tempo t1 para o t2, um chamador externo pode fazer um checkpoint no valor do acumulador no ponto t1 e depois também no ponto t2, subtrair o primeiro valor do segundo e dividir pelo número de segundos que se passou. (Note que o contrato não armazena histórico de valores desse acumulador - o chamador tem que chamar o contrato no começo do período para ler e armazenar o valor).
 
-(ADICIONAR IMAGEM 3)
+![image3](https://github.com/k7seven/traducao-uniswap-v2-whitepaper/assets/132465200/9b9f270f-29e4-46f7-89d6-e8adc8668ecb)
 
 Usuários do oráculo podem escolher quando começar e finalizar esse período. Escolhendo um período mais longo faz com que seja mais caro para um atacante manipular o TWAP, porém faz com que o preço seja menos atualizado.
 
