@@ -83,4 +83,4 @@ O primeiro lado ruim é que 32 bits não é suficiente para armazenar os valores
 
 Em Uniswap V1, um usuario comprando ABC com XYZ precisa enviar XYZ para o contrato antes de poder receber ABC. Isso eh uma inconveniencia se os usuarios precisam de ABC que eles estao comprando para obter XYZ que eles estao pagando. Por exemplo, usuario pode estar usando ABC para comprar XYZ em algum outro contrato para fazer uma arbitragem em algum preco diferente da Uniswap, ou eles podem estar se desfazendo de uma posicao em Maker ou Compound ao vender o colateral para repagar a Uniswap.
 
-Uniswap v2 adiciona uma nova funcionalidade que permite que o usuario receber e usar um ativo antes de pagar por ele, desde que eles facam o pagamento dentro da mesma transacao atomica.
+Uniswap v2 adiciona uma nova funcionalidade que permite que o usuario receber e usar um ativo antes de pagar por ele, desde que eles facam o pagamento dentro da mesma transacao atomica..
